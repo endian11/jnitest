@@ -9,3 +9,6 @@ strcpy(buf, expr);
 根据.java 文件生成.hpp
 在src/main/java下 运用javah命令
 javah -jni  全类名
+
+如果遇到.cpp 无法加入cradle sync now失效
+在cmalelists.txt里，随表敲个空格，然后再sync now
