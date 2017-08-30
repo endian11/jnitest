@@ -4,6 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
+
+import java.net.HttpURLConnection;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -12,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Logger.addLogAdapter(new AndroidLogAdapter());
 
         // Example of a call to a native method
         JniTest jniTest = new JniTest();
@@ -23,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         int sub= jniTest.addSub(34,6);
         tv.setText(jniTest.stringFromJNI()+String.valueOf(sub)+"person:"+p);
     }
+
 
 
 }
